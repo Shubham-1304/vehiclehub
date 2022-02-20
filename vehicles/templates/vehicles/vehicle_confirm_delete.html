@@ -1,0 +1,7 @@
+<h1>Remove Vehicle</h1>
+<a href="{% url 'vehicles' %}">Go Back</a>
+<form method="POST" >
+    {% csrf_token %}
+    <p>Are you sure you want to remove this vehicle from the list</p>
+    <input type="submit" value="Delete">
+</form>

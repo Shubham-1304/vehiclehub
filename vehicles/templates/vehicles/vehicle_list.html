@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vehicles List</h1>
+    <a style="padding:20px 10px 20px 15px;" href="{% url 'add-vehicle' %}">Add Vehicle</a>
+    <table>
+        <tr>
+            <th >Vehicle</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for vehicle in vehicles %}
+            <tr>
+                <div>
+                    <td style="padding:0 10px 0 15px;"><h4>{{vehicle}}</h4></td>
+                    <td style="padding:0 15px 0 15px;"><a href="{% url 'details' vehicle.id %}"><h4>View</h4></a></td>
+                    <td style="padding:0 15px 0 15px;"><a href="{% url 'update-vehicle' vehicle.id %}"><h4>Edit</h4></a></td>
+                    <td style="padding:0 15px 0 15px;"><a href="{% url 'delete-vehicle' vehicle.id %}"><h4>Delete</h4></a></td>
+                </div>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
